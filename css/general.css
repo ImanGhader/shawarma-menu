@@ -8,7 +8,6 @@
 @viewport { width: device-width; scale: 1;}
 
 body {
-	background-color: blue;
 	font-family: sans-serif;
 }
 
@@ -52,6 +51,14 @@ h3 {
 		max-width: 150px
 	}
 
+#imagelightbox
+{
+    position: fixed;
+    z-index: 9999;
+ 
+    -ms-touch-action: none;
+    touch-action: none;
+}
 
 @media only screen and (min-width: 25em) {/*400px*/
 	.content-container img {
