@@ -53,6 +53,7 @@ h3 {
 		max-width: 150px
 	}
 
+<<<<<<< HEAD
 .img-container {
 	background: url('../img/rec.jpg') no-repeat center center;
 	height: 100px;
@@ -66,13 +67,20 @@ h3 {
 }
 
 #imagelightbox {
+=======
+#imagelightbox
+{
+>>>>>>> origin/gh-pages
     position: fixed;
     z-index: 9999;
  
     -ms-touch-action: none;
     touch-action: none;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/gh-pages
 
 @media only screen and (min-width: 25em) {/*400px*/
 	.row-container img {
