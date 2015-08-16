@@ -8,29 +8,11 @@
 @viewport { width: device-width; scale: 1;}
 
 body {
-	background-color: blue;
 	font-family: sans-serif;
 }
 
 img {
 	width: 100%;
-}
-
-#wrapper {
-	width: 70%;
-	margin: 0 auto;
-	border: 2px solid red;
-	padding: 30px;
-}
-
-.content-container {
-	border: 2px solid green;
-	margin: 30px;
-}
-
-#wrapper li{
-	display: inline-block;
-	position: relative;
 }
 
 h3 {
@@ -40,21 +22,60 @@ h3 {
 	margin: 10px 0 5px;
 }
 
-.content-container p {
+#wrapper {
+	width: 70%;
+	margin: 0 auto;
+	border: 2px solid red;
+	padding: 30px;
+}
+
+.row-container {
+	border: 2px solid green;
+	margin-bottom: 1rem;
+}
+
+.row-container li{
+	display: inline-block;
+	position: relative;	
+	
+}
+
+.row-container p {
 	margin: 5px 0 5px;
 }
 
-.content-container ul {
+.row-container ul {
 	margin: 5px 0 10px;
+	overflow: hidden;
 }
 
-.content-container img {
+.row-container img {
 		max-width: 150px
 	}
 
+.img-container {
+	background: url('../img/rec.jpg') no-repeat center center;
+	height: 100px;
+	width: 100%
+}
+
+.img-container2 {
+	background: url('../img/rec2.jpg') no-repeat center center;
+	height: 100px;
+	width: 100%
+}
+
+#imagelightbox {
+    position: fixed;
+    z-index: 9999;
+ 
+    -ms-touch-action: none;
+    touch-action: none;
+}
+
 
 @media only screen and (min-width: 25em) {/*400px*/
-	.content-container img {
+	.row-container img {
 		float: right;
 	}
 }
@@ -64,7 +85,7 @@ h3 {
 		padding-left: 15px;
 	}
 
-	.content-container img {
+	.row-container img {
 		max-width: 120px
 	}
 

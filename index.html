@@ -6,8 +6,8 @@
   <title>Shawarma Express Menu</title>
       <link href='http://fonts.googleapis.com/css?family=Didact+Gothic|Roboto:100,400,300,500,700,300italic' rel='stylesheet' type='text/css'>  
     <link rel="stylesheet" type="text/css" href="css/reset.css">
-    <link href="css/general.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/grid.css">
+    <link href="css/general.css" rel="stylesheet">
     <meta name="handheldfriendly" content="true">
     <meta name="mobileoptimized" content="240">
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -16,28 +16,61 @@
 <body class="grid">
 	<div id="wrapper" class="unit unit-s-1 unit-m-1 unit-l-1 unit-xl-1">
 
-		<div class="grid content-container">
-
-					<div class="unit unit-xs-1-2 unit-s-1-2 unit-m-1-4 unit-l-1-5 unit-xl-2-6">
-						<img src="img/sq.jpg" alt="">
-					</div>
+		<div class="grid row-container">
+ 
+					<a class="lightbox unit unit-xs-1 unit-s-1 unit-m-1-4 unit-l-1-5 unit-xl-2-6" href="img/rec.jpg">
+						<div class="img-container"></div>
+					</a>
 					
 					<div class="text-container unit-xs-1 unit unit-s-1 unit-m-2-4 unit-l-3-5 unit-xl-3-6">
 						<h3>Item Title</h3>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed sapien quam. Sed dapibus est id enim facilisis, at posuere turpis adipiscing. Quisque sit amet dui dui.</p>
 					</div>
 
-					<div class="text-container unit unit-xs-1-2 unit-s-1-2 unit-m-1-4 unit-l-1-5 unit-xl-1-6">
+					<div class="text-container unit unit-xs-1 unit-s-1 unit-m-1-4 unit-l-1-5 unit-xl-1-6">
 						<ul>
-							<li>S #</li>
-							<li>M #</li>
-							<li>L #</li>
+							<li>S 8.75</li>
+							<li>M 7.5</li>
+							<li>L 9.65</li>
+						</ul>	
+					</div>
+
+		</div>
+
+		<div class="grid row-container">
+ 
+					<a class="lightbox unit unit-xs-1 unit-s-1 unit-m-1-4 unit-l-1-5 unit-xl-2-6" href="img/rec2.jpg">
+						<div class="img-container2"></div>
+					</a>
+					
+					<div class="text-container unit-xs-1 unit unit-s-1 unit-m-2-4 unit-l-3-5 unit-xl-3-6">
+						<h3>Item Title</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed sapien quam. Sed dapibus est id enim facilisis, at posuere turpis adipiscing. Quisque sit amet dui dui.</p>
+					</div>
+
+					<div class="text-container unit unit-xs-1 unit-s-1 unit-m-1-4 unit-l-1-5 unit-xl-1-6">
+						<ul>
+							<li>S 8.75</li>
+							<li>M 7.5</li>
+							<li>L 9.65</li>
 						</ul>	
 					</div>
 
 		</div>
 
 	</div>
+
+<!-- //////////////////////////////////////////////////////////////////// SCRIPT -->		
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/imagelightbox.js"></script>
+<script>
+    $( function()
+    {
+        $( '.lightbox' ).imageLightbox();
+    });
+</script>
+<!-- //////////////////////////////////////////////////////////////////// SCRIPT -->		
+
 </body>
-</html
+</html>
 
