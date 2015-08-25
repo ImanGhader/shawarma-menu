@@ -18,7 +18,7 @@
 
 		<div class="grid row-container">
  
-					<a class="lightbox unit unit-xs-1 unit-s-1 unit-m-1-4 unit-l-1-5 unit-xl-2-6" href="img/rec2.jpg">
+					<a data-imagelightbox="g" class="lightbox unit unit-xs-1 unit-s-1 unit-m-1-4 unit-l-1-5 unit-xl-2-6" href="img/rec2.jpg">
 						<div class="img-container2"></div>
 					</a>
 					
@@ -39,7 +39,7 @@
 
 		<div class="grid row-container">
  
-					<a class="lightbox unit unit-xs-1 unit-s-1 unit-m-1-4 unit-l-1-5 unit-xl-2-6" href="img/rec2.jpg">
+					<a data-imagelightbox="g" class=" lightbox unit unit-xs-1 unit-s-1 unit-m-1-4 unit-l-1-5 unit-xl-2-6" href="img/rec2.jpg">
 						<div class="img-container2"></div>
 					</a>
 					
@@ -69,6 +69,55 @@
     {
         $( '.lightbox' ).imageLightbox();
     });
+    arrowsOn = function( instance, selector ){
+	var $arrows = $( '<button type="button" class="imagelightbox-arrow imagelightbox-arrow-left"></button><button type="button" class="imagelightbox-arrow imagelightbox-arrow-right"></button>' );
+
+	$arrows.appendTo( 'body' );
+
+	$arrows.on( 'click touchend', function( e ) {
+		e.preventDefault();
+
+		var $this	= $( this ),
+		$target	= $( selector + '[href="' + $( '#imagelightbox' ).attr( 'src' ) + '"]' ),
+		index	= $target.index( selector );
+
+		if( $this.hasClass( 'imagelightbox-arrow-left' ) ) {
+		index = index - 1;
+		if( !$( selector ).eq( index ).length )
+		index = $( selector ).length;
+		}
+		else {
+		index = index + 1;
+		if( !$( selector ).eq( index ).length ) index = 0;
+		}
+
+		instance.switchImageLightbox( index );
+		return false;
+		});
+		},
+			
+		arrowsOff = function(){
+			$( '.imagelightbox-arrow' ).remove();
+		};
+
+
+    var selectorG = 'a[data-imagelightbox="g"]';
+	var instanceG = $( selectorG ).imageLightbox( {
+
+			onStart:		function(){ arrowsOn( instanceG, selectorG ); },
+			onEnd:			function(){ arrowsOff(); activityIndicatorOff(); },
+			onLoadStart: 	function(){ activityIndicatorOn(); },
+			onLoadEnd:	 	function(){ $( '.imagelightbox-arrow' ).css( 'display', 'block' ); activityIndicatorOff(); }
+		});
+
+	var activityIndicatorOn = function()
+			{
+				$( '<div id="imagelightbox-loading"><div></div></div>' ).appendTo( 'body' );
+			},
+			activityIndicatorOff = function()
+			{
+				$( '#imagelightbox-loading' ).remove();
+			};
 </script>
 <!-- //////////////////////////////////////////////////////////////////// SCRIPT -->		
 
