@@ -39,7 +39,7 @@
 
 		<div class="grid row-container">
 
-					<a data-imagelightbox="g" class=" lightbox unit unit-xs-1 unit-s-1 unit-m-1-4 unit-l-1-5 unit-xl-2-6" href="img/rec2.jpg">
+		
 					<a class="lightbox unit unit-xs-1 unit-s-1 unit-m-1-4 unit-l-1-5 unit-xl-2-6" href="img/rec2.jpg" data-imagelightbox="g">
 						<div class="img-container2"></div>
 					</a>
@@ -71,47 +71,17 @@
         $( '.lightbox' ).imageLightbox();
     });
 
-    arrowsOn = function( instance, selector ){
-	var $arrows = $( '<button type="button" class="imagelightbox-arrow imagelightbox-arrow-left"></button><button type="button" class="imagelightbox-arrow imagelightbox-arrow-right"></button>' );
+    arrowsOn = function( instance, selector )
+			{
+				var $arrows = $( '<button type="button" class="imagelightbox-arrow imagelightbox-arrow-left"></button><button type="button" class="imagelightbox-arrow imagelightbox-arrow-right"></button>' );
 
-	$arrows.appendTo( 'body' );
+				$arrows.appendTo( 'body' );
 
+				$arrows.on( 'click touchend', function( e )
+				{
+					e.preventDefault();
 
-	$arrows.on( 'click touchend', function( e ) {
-		e.preventDefault();
-
-		var $this	= $( this ),
-		$target	= $( selector + '[href="' + $( '#imagelightbox' ).attr( 'src' ) + '"]' ),
-		index	= $target.index( selector );
-
-		if( $this.hasClass( 'imagelightbox-arrow-left' ) ) {
-		index = index - 1;
-		if( !$( selector ).eq( index ).length )
-		index = $( selector ).length;
-		}
-		else {
-		index = index + 1;
-		if( !$( selector ).eq( index ).length ) index = 0;
-		}
-
-		instance.switchImageLightbox( index );
-		return false;
-		});
-		},
-			
-		arrowsOff = function(){
-			$( '.imagelightbox-arrow' ).remove();
-		};
-
-
-    var selectorG = 'a[data-imagelightbox="g"]';
-	var instanceG = $( selectorG ).imageLightbox( {
-
-
-	$arrows.on( 'click touchend', function( e ){
-	e.preventDefault();
-
-	var $this	= $( this ),
+					var $this	= $( this ),
 						$target	= $( selector + '[href="' + $( '#imagelightbox' ).attr( 'src' ) + '"]' ),
 						index	= $target.index( selector );
 
@@ -132,7 +102,6 @@
 					return false;
 				});
 			},
-
 			arrowsOff = function()
 			{
 				$( '.imagelightbox-arrow' ).remove();
